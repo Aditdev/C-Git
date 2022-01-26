@@ -8,6 +8,15 @@ int addin(int a, int b)
     return (a + b);
 }
 
+// Function for sum of n numbers
+int summan(int ininum, int finnum, int steps)
+{
+    int sum = 0;
+    for (int it = 1; it < finnum; it += steps)
+        sum += it;
+    return sum;
+}
+
 // Function to subtract
 int sub(int a, int b)
 {
@@ -40,7 +49,7 @@ void calculator()
 {
     int a, b, c, n, r;
     int x = 1;
-    cout << "1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. Exit";
+    cout << "1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. sum of n numbers\n7.Exit";
     cin >> a;
     switch (a)
     {
@@ -69,7 +78,7 @@ void calculator()
             cin >> r;
             if (n > r && n != 0 && r != 0)
             {
-                cout << n << "P" << r << combin(n, r);
+                cout << n << "P" << r << permun(n, r);
                 x = 2;
             }
             else
@@ -92,6 +101,18 @@ void calculator()
                 x = 1;
         }
         break;
+    case 6:
+        int stpcnt, ininum, finnum, summit;
+        cout << "Give us the following:\n";
+        cout << "1. Initial Number\n";
+        cin >> ininum;
+        cout << "2. Final Number\n";
+        cin >> finnum;
+        cout << "3. Steps\n";
+        cin >> stpcnt;
+        summit = summan(ininum, finnum, stpcnt);
+        printf("The sum of numbers from %d to %d with %d as step is %d", ininum, finnum, stpcnt, summit);
+        break;
     default:
         exit(0);
         break;
@@ -100,18 +121,20 @@ void calculator()
 
 int main()
 {
-    int a;
-    char ch;
-    cout << "what you want\n\n1.\tCalculator\n2.\tNothing";
+    int a, j = 1;
+    cout << "\nwhat you want\n\n1.\tCalculator\n2.\tNothing\n\n\n";
     cin >> a;
     switch (a)
     {
     case 1:
-        calculator();
+        cout << "\n\n";
+        while (j == 1)
+        {
+            calculator();
+        }
         break;
     default:
         exit(0);
     }
-    calculator();
     return 0;
 }
