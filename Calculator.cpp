@@ -97,10 +97,7 @@ void calculator()
         break;
     }
 }
-void exitin()
-{
-    exit(0);
-}
+
 int main()
 {
     int a;
@@ -113,7 +110,7 @@ int main()
         calculator();
         break;
     default:
-        exitin();
+        exit(0);
     }
     cout << "Runs";
     calculator();
