@@ -69,7 +69,6 @@ void calculator()
             if (n > r && n != 0 && r != 0)
             {
                 cout << n << "P" << r << combin(n, r);
-
                 x = 2;
             }
             else
