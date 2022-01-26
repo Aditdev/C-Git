@@ -11,8 +11,8 @@ int addin(int a, int b)
 // Function for sum of n numbers
 int summan(int ininum, int finnum, int steps)
 {
-    int sum = 0;
-    for (int it = 1; it < finnum; it += steps)
+    int sum = 1;
+    for (int it = ininum; it < finnum; it += steps)
         sum += it;
     return sum;
 }
@@ -49,7 +49,7 @@ void calculator()
 {
     int a, b, c, n, r;
     int x = 1;
-    cout << "1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. sum of n numbers\n7.Exit";
+    cout << "\n\n1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. sum of n numbers\n7.Exit\n\n";
     cin >> a;
     switch (a)
     {
@@ -72,13 +72,13 @@ void calculator()
     case 4:
         while (x == 1)
         {
-            cout << "Value of n:";
+            cout << "\nValue of n:";
             cin >> n;
-            cout << "Value of r:";
+            cout << "\nValue of r:";
             cin >> r;
             if (n > r && n != 0 && r != 0)
             {
-                cout << n << "P" << r << permun(n, r);
+                cout << n << "P" << r << " = " << permun(n, r);
                 x = 2;
             }
             else
@@ -88,13 +88,13 @@ void calculator()
     case 5:
         while (x == 1)
         {
-            cout << "Value of n:";
+            cout << "\nValue of n:";
             cin >> n;
-            cout << "Value of r:";
+            cout << "\nValue of r:";
             cin >> r;
             if (n > r && n != 0 && r != 0)
             {
-                cout << n << "C" << r << combin(n, r);
+                cout << n << "C" << r << " = " << combin(n, r);
                 x = 2;
             }
             else
@@ -103,7 +103,7 @@ void calculator()
         break;
     case 6:
         int stpcnt, ininum, finnum, summit;
-        cout << "Give us the following:\n";
+        cout << "\nGive us the following:\n";
         cout << "1. Initial Number\n";
         cin >> ininum;
         cout << "2. Final Number\n";
@@ -111,7 +111,7 @@ void calculator()
         cout << "3. Steps\n";
         cin >> stpcnt;
         summit = summan(ininum, finnum, stpcnt);
-        printf("The sum of numbers from %d to %d with %d as step is %d", ininum, finnum, stpcnt, summit);
+        printf("\nThe sum of numbers from %d to %d with %d as step is %d", ininum, finnum, stpcnt, summit);
         break;
     default:
         exit(0);
