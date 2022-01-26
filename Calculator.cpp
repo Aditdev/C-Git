@@ -37,13 +37,85 @@ int combin(int n, int r)
 
 void calculator()
 {
-    ;
+    int a, b, c, n, r;
+    int x = 1;
+    cout << "1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. Exit";
+    cin >> a;
+    switch (a)
+    {
+    case 1:
+        cout << "Which are the 2 Numbers?\n";
+        cin >> b >> c;
+        cout << "Addition of these 2 numbers is " << addin(b, c);
+        break;
+    case 2:
+        cout << "Which are the 2 Numbers?\n";
+        cin >> b >> c;
+        cout << "Difference between these Numbers is " << sub(b, c);
+        break;
+    case 3:
+        cout << "Which number factorial?\n";
+        cin >> n;
+        r = factorial(n);
+        printf("%d! = %d", n, r);
+        break;
+    case 4:
+        while (x == 1)
+        {
+            cout << "Value of n:";
+            cin >> n;
+            cout << "Value of r:";
+            cin >> r;
+            if (n > r && n != 0 && r != 0)
+            {
+                cout << n << "P" << r << combin(n, r);
+
+                x = 2;
+            }
+            else
+                x = 1;
+        }
+        break;
+    case 5:
+        while (x == 1)
+        {
+            cout << "Value of n:";
+            cin >> n;
+            cout << "Value of r:";
+            cin >> r;
+            if (n > r && n != 0 && r != 0)
+            {
+                cout << n << "C" << r << combin(n, r);
+                x = 2;
+            }
+            else
+                x = 1;
+        }
+        break;
+    default:
+        exit(0);
+        break;
+    }
+}
+void exitin()
+{
+    exit(0);
 }
 int main()
 {
-    int a, b, c;
+    int a;
+    char ch;
+    cout << "what you want\n\n1.\tCalculator\n2.\tNothing";
+    cin >> a;
+    switch (a)
+    {
+    case 1:
+        calculator();
+        break;
+    default:
+        exitin();
+    }
     cout << "Runs";
     calculator();
     return 0;
 }
-
