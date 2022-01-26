@@ -35,6 +35,7 @@ int combin(int n, int r)
     return (permun(n, r) * factorial(r));
 }
 
+// Void Function for calculator
 void calculator()
 {
     int a, b, c, n, r;
@@ -111,7 +112,6 @@ int main()
     default:
         exit(0);
     }
-    cout << "Runs";
     calculator();
     return 0;
 }
