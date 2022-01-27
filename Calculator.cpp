@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 // Function to add
@@ -47,6 +47,7 @@ int combin(int n, int r)
 // Void Function for calculator
 void calculator()
 {
+    int h = 1;
     int a, b, c, n, r;
     int x = 1;
     cout << "\n\n1. Sum of 2 nums\t2. Diff. of 2 nums\n3. Factorial\t4. Permutation\n5. Combination\t6. sum of n numbers\n7.Exit\n\n";
@@ -113,6 +114,29 @@ void calculator()
         summit = summan(ininum, finnum, stpcnt);
         printf("\nThe sum of numbers from %d to %d with %d as step is %d", ininum, finnum, stpcnt, summit);
         break;
+
+    case 7:
+        int fnum, rat, nums;
+        while (h == 1)
+        {
+            cout << "\nFirst Number is -> ";
+            cin >> fnum;
+            cout << "Common ratio is -> ";
+            cin >> rat;
+            if (rat != 1 && rat != 0)
+            {
+                int Sn;
+                Sn = fnum * (pow(rat, nums) - 1) / (rat - 1);
+                if (Sn<0){Sn =-Sn;}
+                cout << "Sum of GP is " << Sn;
+                h = 0;
+            }
+            else
+            {
+                h = 1;
+            }
+        }
+        break;
     default:
         exit(0);
         break;
@@ -121,20 +145,23 @@ void calculator()
 
 int main()
 {
-    int a, j = 1;
-    cout << "\nwhat you want\n\n1.\tCalculator\n2.\tNothing\n\n\n";
-    cin >> a;
-    switch (a)
+    int a, j = 1, g = 1;
+    while (g)
     {
-    case 1:
-        cout << "\n\n";
-        while (j == 1)
+        cout << "\nwhat you want\n\n1.\tCalculator\n2.\tNothing\n\n\n";
+        cin >> a;
+        switch (a)
         {
-            calculator();
+        case 1:
+            cout << "\n\n";
+            while (j == 1)
+            {
+                calculator();
+            }
+            break;
+        default:
+            exit(0);
         }
-        break;
-    default:
-        exit(0);
     }
     return 0;
 }
