@@ -31,17 +31,18 @@ int factorial(int n)
         fact = fact * i;
     return fact;
 }
+// Function for combination
 
-// Function for permutation
-int permun(int n, int r)
+int combin(int n, int r)
 {
     return (factorial(n) / (factorial(r) * factorial(n - r)));
 }
 
-// Function for combination
-int combin(int n, int r)
+// Function for permutation
+int permun(int n, int r)
 {
-    return (permun(n, r) * factorial(r));
+
+    return (combin(n, r) * factorial(r));
 }
 
 // Void Function for calculator
@@ -127,7 +128,10 @@ void calculator()
             {
                 int Sn;
                 Sn = fnum * (pow(rat, nums) - 1) / (rat - 1);
-                if (Sn<0){Sn =-Sn;}
+                if (Sn < 0)
+                {
+                    Sn = -Sn;
+                }
                 cout << "Sum of GP is " << Sn;
                 h = 0;
             }
@@ -153,7 +157,6 @@ int main()
         switch (a)
         {
         case 1:
-            cout << "\n\n";
             while (j == 1)
             {
                 calculator();
