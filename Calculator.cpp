@@ -20,8 +20,18 @@ int summan(int ininum, int finnum, int steps)
 // Function to subtract
 int sub(int a, int b)
 {
-    return (a - b);
+    int c;
+    c = a - b;
+    if (a < b)
+    {
+        c = -c;
+    }
+    return (c);
 }
+
+// void main(){
+
+// }
 
 // Function for factorial
 int factorial(int n)
