@@ -9,6 +9,9 @@ int addin(int a, int b)
 }
 
 // Function for sum of n numbers
+// Where ininum is initial number 
+// finnum is final number 
+// And steps denote stepcount 
 int summan(int ininum, int finnum, int steps)
 {
     int sum = 1;
