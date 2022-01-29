@@ -9,12 +9,12 @@ int addin(int a, int b)
 }
 
 // Function for sum of n numbers
-// Where ininum is initial number 
-// finnum is final number 
-// And steps denote stepcount 
+// Where ininum is initial number
+// finnum is final number
+// And steps denote stepcount
 int summan(int ininum, int finnum, int steps)
 {
-    int sum = 1;
+    int sum = 0;
     for (int it = ininum; it < finnum; it += steps)
         sum += it;
     return sum;
@@ -137,14 +137,14 @@ void calculator()
             cin >> fnum;
             cout << "Common ratio is -> ";
             cin >> rat;
+            cout << "Number of terms is -> ";
+            cin >> nums;
             if (rat != 1 && rat != 0)
             {
-                int Sn;
+                int Sn = 0;
                 Sn = fnum * (pow(rat, nums) - 1) / (rat - 1);
                 if (Sn < 0)
-                {
                     Sn = -Sn;
-                }
                 cout << "Sum of GP is " << Sn;
                 h = 0;
             }
@@ -163,6 +163,7 @@ void calculator()
 int main()
 {
     int a, j = 1, g = 1;
+    system("cls");
     while (g)
     {
         cout << "\nwhat you want\n\n1.\tCalculator\n2.\tNothing\n\n\n";
