@@ -155,6 +155,7 @@ void calculator()
         }
         break;
     default:
+        cout << "An invalid input confused the system thus it has crashed";
         exit(0);
         break;
     }
@@ -177,6 +178,7 @@ int main()
             }
             break;
         default:
+            cout << "This input crashed the app";
             exit(0);
         }
     }
