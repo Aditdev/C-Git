@@ -15,7 +15,7 @@ int addin(int a, int b)
 int summan(int ininum, int finnum, int steps)
 {
     int sum = 0;
-    for (int it = ininum; it < finnum; it += steps)
+    for (int it = ininum; it <= finnum; it += steps)
         sum += it;
     return sum;
 }
