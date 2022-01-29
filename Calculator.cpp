@@ -32,10 +32,6 @@ int sub(int a, int b)
     return (c);
 }
 
-// void main(){
-
-// }
-
 // Function for factorial
 int factorial(int n)
 {
