@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+
 using namespace std;
 
 // Function to add
@@ -12,12 +12,14 @@ int addin(int a, int b)
 // Where ininum is initial number
 // finnum is final number
 // And steps denote stepcount
-int summan(int ininum, int finnum, int steps)
+int summan( float ininum, int finnum, int steps)
 {
-    int sum = 0;
-    for (int it = ininum; it <= finnum; it += steps)
-        sum += it;
-    return sum;
+    if (steps != 0)
+    {
+        for ( float it = ininum; it <= finnum; it += steps)
+            ininum += it;
+    }
+    return ininum;
 }
 
 // Function to subtract
@@ -36,9 +38,15 @@ int sub(int a, int b)
 int factorial(int n)
 {
     int fact = 1;
-    for (int i = 1; i <= n; i++)
+    for ( float i = 1; i <= n; i++)
         fact = fact * i;
-    return fact;
+    if (fact)
+    {
+        return fact;
+    }
+    else{
+        cout<<"Factorial function passed limit of 2,147,483,647";
+    }
 }
 // Function for combination
 
@@ -52,6 +60,17 @@ int permun(int n, int r)
 {
 
     return (combin(n, r) * factorial(r));
+}
+
+// Function for Power
+int power(int num, int raisedto)
+{
+     float i = 0, prd = 1;
+    for (i = 0; i < raisedto; i++)
+    {
+        prd *= num;
+    }
+    return prd;
 }
 
 // Void Function for calculator
@@ -87,7 +106,7 @@ void calculator()
             cin >> n;
             cout << "\nValue of r:";
             cin >> r;
-            if (n > r && n != 0 && r != 0)
+            if (n >= r && n != 0 && r != 0)
             {
                 cout << n << "P" << r << " = " << permun(n, r);
                 x = 2;
@@ -103,7 +122,7 @@ void calculator()
             cin >> n;
             cout << "\nValue of r:";
             cin >> r;
-            if (n > r && n != 0 && r != 0)
+            if (n >= r && n != 0 && r != 0)
             {
                 cout << n << "C" << r << " = " << combin(n, r);
                 x = 2;
@@ -138,7 +157,7 @@ void calculator()
             if (rat != 1 && rat != 0)
             {
                 int Sn = 0;
-                Sn = fnum * (pow(rat, nums) - 1) / (rat - 1);
+                Sn = fnum * (power(rat, nums) - 1) / (rat - 1);
                 if (Sn < 0)
                     Sn = -Sn;
                 cout << "Sum of GP is " << Sn;
@@ -151,13 +170,14 @@ void calculator()
         }
         break;
     default:
-        cout << "An invalid input confused the system thus it has crashed";
+        cout << "This input confused the system thus it has crashed";
+        system("cls");
         exit(0);
         break;
     }
 }
 
-int main()
+int funct()
 {
     int a, j = 1, g = 1;
     system("cls");
@@ -165,6 +185,7 @@ int main()
     {
         cout << "\nwhat you want\n\n1. Calculator\n2. Nothing\n\n\n";
         cin >> a;
+        g++;
         switch (a)
         {
         case 1:
@@ -175,8 +196,15 @@ int main()
             break;
         default:
             cout << "This input crashed the app";
-            exit(0);
         }
     }
+    return 0;
+}
+
+int main()
+{
+    system("cls");
+    funct();
+    system("cls");
     return 0;
 }
