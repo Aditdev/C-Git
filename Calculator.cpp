@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -12,14 +13,15 @@ int addin(int a, int b)
 // Where ininum is initial number
 // finnum is final number
 // And steps denote stepcount
-int summan( float ininum, int finnum, int steps)
+int summan(float ininum, int finnum, int steps)
 {
+    int summation = 0;
     if (steps != 0)
     {
-        for ( float it = ininum; it <= finnum; it += steps)
-            ininum += it;
+        for (float it = ininum; it <= finnum; it += steps)
+            summation += it;
     }
-    return ininum;
+    return summation;
 }
 
 // Function to subtract
@@ -38,14 +40,15 @@ int sub(int a, int b)
 int factorial(int n)
 {
     int fact = 1;
-    for ( float i = 1; i <= n; i++)
+    for (float i = 1; i <= n; i++)
         fact = fact * i;
     if (fact)
     {
         return fact;
     }
-    else{
-        cout<<"Factorial function passed limit of 2,147,483,647";
+    else
+    {
+        cout << "Factorial function passed limit of 2,147,483,647";
     }
 }
 // Function for combination
@@ -65,12 +68,34 @@ int permun(int n, int r)
 // Function for Power
 int power(int num, int raisedto)
 {
-     float i = 0, prd = 1;
+    float i = 0, prd = 1;
     for (i = 0; i < raisedto; i++)
     {
         prd *= num;
     }
     return prd;
+}
+int pally(char j[100])
+{
+    int match = 0, i = 0;
+    int n = strlen(j);
+    for (i = 0; i < n; i++)
+    {
+        if (j[i] == j[n - i - 1])
+        {
+        }
+        else
+        {
+            i = n++;
+            match++;
+            break;
+        }
+    }
+    if (match == 0)
+        printf("Palyndrome");
+    else
+        printf("Not a Palyndrome");
+    return 0;
 }
 
 // Void Function for calculator
@@ -158,7 +183,7 @@ void calculator()
             {
                 int Sn = 0;
                 Sn = fnum * (power(rat, nums) - 1) / (rat - 1);
-                if (Sn < 0)
+                if (Sn < 1)
                     Sn = -Sn;
                 cout << "Sum of GP is " << Sn;
                 h = 0;
@@ -169,7 +194,14 @@ void calculator()
             }
         }
         break;
+    case 8:
+        char str[100];
+        cout << "Give me a String:\n";
+        cin >> str;
+        pally(str);
+        break;
     default:
+
         cout << "This input confused the system thus it has crashed";
         system("cls");
         exit(0);
@@ -196,6 +228,8 @@ int funct()
             break;
         default:
             cout << "This input crashed the app";
+            system("cls");
+            exit(0);
         }
     }
     return 0;
