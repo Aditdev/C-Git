@@ -104,7 +104,7 @@ void calculator()
     int h = 1;
     int a, b, c, n, r;
     int x = 1;
-    cout << "\n\n1. Sum of 2 nums\n2. Diff. of 2 nums\n3. Factorial\n4. Permutation\n5. Combination\n6. sum of n numbers\n7.Sum of n terms in GP\n8. Exit\n\n";
+    cout << "\n\n1. Sum of 2 nums\n2. Diff. of 2 nums\n3. Factorial\n4. Permutation\n5. Combination\n6. sum of n numbers\n7.Sum of n terms in GP\n8. Pallyndrome or not?\n\n";
     cin >> a;
     switch (a)
     {
