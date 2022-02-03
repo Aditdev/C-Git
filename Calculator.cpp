@@ -30,9 +30,7 @@ int sub(int a, int b)
     int c;
     c = a - b;
     if (a < b)
-    {
         c = -c;
-    }
     return (c);
 }
 
