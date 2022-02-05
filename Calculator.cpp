@@ -84,8 +84,8 @@ int pally(char j[100])
         }
         else
         {
-            i = n++;
             match++;
+            i = n++;
             break;
         }
     }
@@ -240,5 +240,3 @@ int main()
     system("cls");
     return 0;
 }
-
-
